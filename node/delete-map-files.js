@@ -8,11 +8,11 @@ const path = require('path');
  * @return {void}
  */
 const deleteMapFiles = (p) => {
-  const files = fs.readdirSync(p);
+  const files = fs.readdirSync(path.resolve(__dirname, p));
   console.log(`Files under ${p}: ${files}`);
 
   files.forEach(e => {
-    const currentFilePath = path.resolve(p, e);
+    const currentFilePath = path.resolve(__dirname, p, e);
 
     fs.stat(currentFilePath, {}, (err, stat) => {
       if (err) {
@@ -33,7 +33,8 @@ const deleteMapFiles = (p) => {
   });
 };
 
-deleteMapFiles(path.resolve(__dirname, 'playground'));
+// deleteMapFiles(path.resolve(__dirname, 'playground'));
+deleteMapFiles('./playground');
 
 // * ------------------------------------------------
 
