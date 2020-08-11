@@ -28,4 +28,4 @@ const getLoglevel = () => {
 };
 ```
 
-答：
+答：定义一个函数，该函数尝试从`localStorage`获取日志级别，不存在则返回默认值`INFO`
