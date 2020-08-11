@@ -4,7 +4,9 @@
  * @returns {string} 返回 url 中的 host
  */
 const getHostName = (url) => {
-  // 请实现……
+  const regex = /^http[s]?:\/\/(.*?)\//;
+  const matched = url.match(regex);
+  return matched[1];
 };
 
 // * ---------------- 实现的效果：
