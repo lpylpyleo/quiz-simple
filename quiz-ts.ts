@@ -2,12 +2,23 @@
 // * 给下这段的代码加上 TypeScript 类型声明，以便更好地使用数据。
 
 // * ---------------- 请补充……
+/**碰巧发现这种写法也可以
+ * ```
+ * type Todo = {
+ *  "userId": number,
+ *  "id": number,
+ *  "title": string,
+ *  "completed": boolean
+ *};
+ * ```
+ */
+
 type Todo = {
-  "userId": number,
-  "id": number,
-  "title": string,
-  "completed": boolean
-};
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 const getData = async (): Promise<Todo[]> =>
   await fetch('https://jsonplaceholder.typicode.com/todos/').then((response) => response.json());
